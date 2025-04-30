@@ -1,0 +1,126 @@
+/* Tab Container */
+.tabs-container {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Tab Header */
+.tabs-header {
+    display: flex;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+    position: relative;
+}
+
+/* Tab Buttons */
+.tab-btn {
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    color: #6b7280;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.tab-btn:hover {
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.tab-btn:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: -2px;
+    z-index: 1;
+}
+
+.tab-btn.active {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #3b82f6;
+}
+
+/* Tab Content */
+.tabs-content {
+    padding: 1.5rem;
+    background: white;
+}
+
+.tab-panel {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .tabs-header {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 2px;
+    }
+    
+    .tabs-header::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .tab-btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .tabs-container {
+        box-shadow: none;
+        border: 1px solid #e5e7eb;
+    }
+    
+    .tabs-header {
+        display: none;
+    }
+    
+    .tab-panel {
+        display: block !important;
+        animation: none !important;
+        padding: 0;
+        margin-bottom: 1.5rem;
+    }
+    
+    .tab-panel:not(:last-child) {
+        page-break-after: always;
+    }
+}

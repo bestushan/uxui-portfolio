@@ -1,0 +1,19 @@
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node.js (if you use npm)
+node_modules/
+npm-debug.log
+
+# VS Code settings
+.vscode/
+
+# System files
+*.bak
+*.tmp
+~$*
+
+# Environment files (if any)
+.env

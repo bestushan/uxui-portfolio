@@ -1,0 +1,75 @@
+/* SEO Process Timeline Styles */
+.seo-process-container {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.seo-process-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #3B82F6;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.seo-steps {
+    position: relative;
+    z-index: 1;
+}
+
+.seo-step {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.seo-step-number {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #3B82F6;
+    color: white;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.seo-step-content {
+    background: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .seo-step {
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 4rem;
+    }
+    
+    .seo-step:nth-child(odd) .seo-step-content {
+        grid-column: 1;
+        text-align: right;
+        margin-right: 2rem;
+    }
+    
+    .seo-step:nth-child(even) .seo-step-content {
+        grid-column: 2;
+        text-align: left;
+        margin-left: 2rem;
+    }
+    
+    .seo-step-number {
+        grid-row: 1;
+        grid-column: 1 / span 2;
+    }
+}

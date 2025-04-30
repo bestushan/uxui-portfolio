@@ -1,0 +1,183 @@
+/* Base Styles */
+:root {
+    --primary: #3B82F6;
+    --primary-dark: #2563EB;
+    --secondary: #6B7280;
+    --dark: #111827;
+    --light: #F9FAFB;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    color: var(--dark);
+}
+
+/* Section Animations */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Components */
+.color-swatch {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-right: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.wireframe {
+    background-color: #F3F4F6;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+}
+
+.wireframe::before {
+    content: "Wireframe Preview";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+    color: #6B7280;
+}
+
+.code-snippet {
+    background-color: #1E293B;
+    color: #F8FAFC;
+    border-radius: 8px;
+    padding: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    overflow-x: auto;
+}
+.project-card {
+    transition: all 0.3s ease;
+    border: 1px solid #E5E7EB;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Accessibility Styles */
+.high-contrast {
+    --primary: #0056B3;
+    --primary-dark: #003366;
+    --secondary: #333333;
+    --dark: #000000;
+    --light: #FFFFFF;
+    background-color: var(--light) !important;
+    color: var(--dark) !important;
+}
+
+.high-contrast .section {
+    background-color: var(--light) !important;
+}
+
+.high-contrast .wireframe {
+    background-color: #DDDDDD !important;
+}
+
+.high-contrast .project-card {
+    border: 2px solid var(--dark) !important;
+}
+
+.reduce-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+}
+/* ... (other existing styles) ... */
+
+/* Focus styles for keyboard navigation */
+a:focus, button:focus, input:focus, [tabindex="0"]:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 10px;
+    z-index: 999;
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    left: 10px;
+}
+      /* SEO & Testing Section Styles */
+.lighthouse-score {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--primary);
+    transition: all 0.5s ease;
+}
+
+.tool-badge {
+    transition: transform 0.2s ease;
+}
+
+.tool-badge:hover {
+    transform: translateY(-2px);
+    background-color: #E5E7EB;
+}
+
+/* Browser compatibility icons */
+.browser-icon {
+    width: 40px;
+    height: 40px;
+    filter: grayscale(30%);
+    transition: all 0.3s ease;
+}
+
+.browser-icon:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
